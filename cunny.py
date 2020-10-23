@@ -16,16 +16,12 @@ def get_mcmod_info_ids():
                             mod_name = obj["name"]
                             if examine_stupidness(jar, mod_name):
                                 mods[mod_name[0].capitalize() + mod_name[1:]] = jar.split("\\")[-1]
-                                # mods.append(mod_name[0].capitalize() + mod_name[1:])
-                                # jar_names.append(jar.split("\\")[-1])
                         except (TypeError, KeyError):
                             if type(obj) is str:
                                 if type(mcmod_info[obj]) is list:
                                     mod_name = mcmod_info[obj][0]["name"]
                                     if examine_stupidness(jar, mod_name):
                                         mods[mod_name[0].capitalize() + mod_name[1:]] = jar.split("\\")[-1]
-                                        # mods.append(mod_name[0].capitalize() + mod_name[1:])
-                                        # jar_names.append(jar.split("\\")[-1])
                             else:
                                 print("Something went wrong for:", jar)
         finally:
